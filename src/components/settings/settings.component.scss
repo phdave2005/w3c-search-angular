@@ -1,0 +1,24 @@
+.flex-field-half-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto 32px;
+    max-width: 600px;
+    width: 90%;
+}
+
+.flex-field.half {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    max-width: 350px;
+    width: 60%;
+}
+
+.flex-field input[type=checkbox] {
+    transform: scale(1.5);
+    width: -webkit-max-content;
+    width: max-content;
+    margin: auto
+}

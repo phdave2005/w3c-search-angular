@@ -1,0 +1,49 @@
+<section class="main-wrapper">
+    <p class="dialog" [class.VH]="!isStorageEvent" [class]="storageEventClass" data-identifier="info">{{ storageEventText }}</p>
+    @if (noStorage) {
+        <div>
+            <h2>{{ textUsed.nostorage }}</h2>
+        </div>
+    } @else {
+        <div>
+            @if (formInitiated) {
+                <form [formGroup]="settingsFormGroup" (submit)="submit($event)">
+                    <h1>{{ textUsed.heading }}</h1>
+                    <div class="flex-field">
+                        <input id="username" formControlName="username" class="field" data-search-category="payload" />
+                        <label for="username" [innerHTML]="textUsed.label.username"></label>
+                    </div>
+                    <div class="flex-field">
+                        <input id="publicKey" formControlName="publicKey" class="field" data-search-category="payload" />
+                        <label for="publicKey" [innerHTML]="textUsed.label.publicKey"></label>
+                    </div>
+                    <div class="flex-field">
+                        <select id="languageCode" formControlName="languageCode" class="field">
+                            @for(l of languages; track l.id) {
+                                <option [value]="l.value">{{ l.label }}</option>
+                            }
+                        </select>
+                        <label for="languageCode">{{ textUsed.label.language}}</label>
+                    </div>
+                    <div class="flex-field-half-wrapper MT32">
+                        <div class="flex-field half">
+                            <input id="searchLimit" formControlName="searchLimit" class="field" step="any" min="1" type="number" data-search-category="payload" (keyup)="handleNumberChange($event)" />
+                            @if (settingsFormGroup.get('searchLimit')?.errors?.['min']) {
+                                <label for="searchLimit" class="invalid-input"><i class="fas fa-times"></i>&nbsp;{{ textUsed.validation.min.searchLimit }}</label>
+                            } @else {
+                                <label for="searchLimit">{{ textUsed.label.searchLimit }}</label>
+                            }
+                        </div>
+                        <div class="flex-field half">
+                            <input id="download" formControlName="download" class="field" type="checkbox" />
+                            <label for="download">{{ textUsed.label.download }}</label>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" className="primary">{{ textUsed.button }}</button>
+                    </div>
+                </form>
+            }
+        </div>
+    }
+</section>

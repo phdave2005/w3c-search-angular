@@ -1,0 +1,51 @@
+<section class="main-wrapper">
+    <div id="main-grid">
+        <div id="main-grid-view" [class.ovyAuto]="!processing">
+            <p class="dialog" [class.VH]="!validationErrorText.trim()" [class.valid]="validationErrorText.trim() && !validationError" [class.invalid]="validationError" data-identifier="info">{{ validationErrorText }}</p>
+            @if (processing) {
+                <div id="processing-container">
+                    <div>
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                    </div>
+                    <p>{{ textUsed.processing.text }}</p>
+                </div>
+            }
+            @if (!results && formInitiated) {
+                <form [formGroup]="homeFormGroup" class="parameters-form" (submit)="search($event)">
+                    <h1 class="form-heading">{{ textUsed.appTitle }}</h1>
+                    <section id="main-section">
+                        <div class="flex-field">
+                            <input id="searchcontains" formControlName="searchcontains" class="field searchcontains" data-search-category="payload">
+                            @if (homeFormGroup.get('searchcontains')?.errors?.['required'] && homeFormGroup.get('searchcontains')?.touched) {
+                                <label for="searchcontains" class="invalid-input"><i class="fas fa-times"></i>&nbsp;{{ textUsed.validation.labels.required }}</label>
+                            } @else if (substringViolation) {
+                                <label for="searchcontains" class="invalid-input"><i class="fas fa-times"></i>&nbsp;{{ textUsed.validation.labels.substringViolation }}</label>
+                            } @else {
+                                <label for="searchcontains">{{ textUsed.labels.searchContains }} *</label>
+                            }
+                        </div>
+                        <div class="flex-field">
+                            <input id="searchlacks" formControlName="searchlacks" class="field searchlacks" data-search-category="payload">
+                            <label for="searchlacks">{{ textUsed.labels.searchLacks }}</label>
+                        </div>
+                    </section>
+                    <div class="button-container">
+                        <button type="submit">{{ buttonText }}</button>
+                    </div>
+                </form>
+            }
+            @if (!!results) {
+                <div id="results-container-parent">
+                    <h1 class="M0">{{ heading }} ({{ recentResponse?.terms?.length }})</h1>
+                    <div id="results-actions">
+                        <span (click)="reset()" class="fa-solid fa-arrows-rotate" [title]="textUsed.tooltip.reset"></span>
+                        <span (click)="copyResponse()" class="fa-solid fa-copy" [title]="textUsed.tooltip.copy"></span>
+                        <span (click)="downloadResponse()" class="fa-solid fa-download" [title]="textUsed.tooltip.download"></span>
+                    </div>
+                    <pre class="results-container bgw" [innerHTML]="results"></pre>
+                </div>
+            }
+            <a href="/" id="download" class="DN">-</a>
+        </div>
+    </div>
+</section>

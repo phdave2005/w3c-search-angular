@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif,helvetica,arial
+}
+
+button {
+    background: #005adc;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    max-width: 200px;
+    padding: 12px;
+    text-transform: uppercase;
+    transition: .7s;
+}
+
+button:hover {
+    opacity: 0.8
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+h1 {
+    color: #005a9c;
+    font-size: 36px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.DN {
+    display: none!important
+}
+
+.flex-field {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto 32px;
+    max-width: 600px;
+    width: 90%;
+}
+
+.flex-field > input, .flex-field > select {
+    border-radius: 32px;
+    box-sizing: border-box;
+    font-size: 28px;
+    margin-bottom: 4px;
+    padding: 12px;
+    width: 100%
+}
+
+.flex-field label {
+    margin: 0 auto;
+    font-size: 20px
+}
+
+.invalid-input {
+    color: red
+}
+
+.main-wrapper {
+    margin: auto;
+    max-width: 1000px;
+    height: 100%;
+}
+
+.main-wrapper .dialog {
+    padding: 16px 0;
+	margin: 0 auto;
+	margin-top: 0;
+	width: 80%;
+	border-radius: 16px;
+    text-align: center
+}
+
+.main-wrapper .dialog.invalid {
+    background: #ff00001a;
+    color: red
+}
+
+.main-wrapper .dialog.valid {
+    color: green;
+	background: rgb(0 255 0 / 0.1)
+}
+
+.ML4 {
+    margin-left: 4px
+}
+
+.MR4 {
+    margin-right: 4px
+}
+
+.MT8 {
+    margin-top: 8px !important;
+}
+
+.VH {
+    visibility: hidden
+}
+
+:focus {
+    outline: 3px solid #addfff
+}
