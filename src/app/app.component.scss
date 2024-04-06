@@ -1,0 +1,50 @@
+.action-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px
+}
+
+.action-container .action {
+    color: #005a9c !important;
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 2px;
+    transition: .7s;
+}
+
+.action-container .action:hover {
+    opacity: 0.7
+}
+
+.flex-align-center {
+    align-items: center
+}
+
+.flex-align-top {
+    align-items: flex-start
+}
+
+header {
+    color: #005a9c;
+    justify-content: flex-end
+}
+
+header, footer {
+    display: flex;
+    height: 35px
+}
+
+header, main {
+    background: whitesmoke
+}
+
+footer {
+    align-items: center;
+    justify-content: space-between
+}
+
+main {
+    height: calc(100% - 70px);
+    overflow-y: auto
+}

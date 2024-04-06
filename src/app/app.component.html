@@ -1,0 +1,22 @@
+<header class="flex-align-top">
+	<div class="action-container MR4">
+		<span>
+			<a href="/w3c-search-angular/help"><i class="fas fa-circle-question action"></i></a>
+		</span>
+		<span>
+			<a [href]="toggleHomeSettingsHref"><i [class]="toggleHomeSettingsClass"></i></a>
+		</span>
+	</div>
+</header>
+<main class="main">
+	<router-outlet />
+</main>
+<footer>
+	<span class="ML4">
+		<a href="https://twitter.com/phdave2005?ref_src=twsrc%5Etfw" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+	</span>
+	<span>&copy;{{ currentYear }} <a href="https://phdave.com" target="_blank" rel="noreferrer">PhDave LLC</a></span>
+	<span class="MR4">
+		<a id="about" href="/w3c-search-angular/about">{{ about }}</a>
+	</span>
+</footer>

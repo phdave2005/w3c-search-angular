@@ -1,0 +1,16 @@
+<section class="main-wrapper">
+    <h1>{{ heading }}</h1>
+    <h2>{{ subheading }}</h2>
+    <ul>
+        @for (c of content; track c.id) {
+            <li class="MT8" [innerHTML]="c.text"></li>
+        }
+    <!--{
+        this.state.text.content.map(content => {
+            return (
+                <li key={'c' + content.id} className="MT8" dangerouslySetInnerHTML={{__html: content.text}}></li>
+            );
+        })
+    }-->
+    </ul>
+</section>
