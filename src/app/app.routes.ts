@@ -7,23 +7,18 @@ import { SettingsComponent } from '../components/settings/settings.component';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: '/w3-search-angular',
-        pathMatch: 'full'
-    },
-    {
-        path: 'w3c-search-angular',
         component: HomeComponent
     },
     {
-        path: 'w3c-search-angular/about',
+        path: 'about',
         component: AboutComponent
     },
     {
-        path: 'w3c-search-angular/help',
+        path: 'help',
         component: HelpComponent
     },
     {
-        path: 'w3c-search-angular/settings',
+        path: 'settings',
         component: SettingsComponent
     }
 ];
