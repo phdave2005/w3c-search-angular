@@ -3,8 +3,6 @@
   "name": "w3c-search-angular",
   "version": "0.0.0",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
